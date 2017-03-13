@@ -7,15 +7,21 @@ import {articleServices} from '../../app/services/articlesServices';
   templateUrl: 'article.html'
 })
 export class ArticlesPage{
-
+  items: any[]
   constructor(public navCtrl: NavController, private _articleService: articleServices) {
 
   }
   ngOnInit(){
-        this._articleService.getArticles()
-        .subscribe(data => {console.log(data);
-        } )
-        
+        this.getArticles();        
   }
-
+  getArticles(){
+            this._articleService.getArticles()
+            .subscribe(res => 
+            {
+              this.items=res.response.docs;
+              console.log(this.items);
+              
+          })
+  }
+  
 }

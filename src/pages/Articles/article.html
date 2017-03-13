@@ -7,5 +7,10 @@
 </ion-header>
 
 <ion-content padding>
-        Articles Home Page
+        <ion-list>
+          <ion-item *ngFor="let article of items">
+              <h3>{{article.snippet}}</h3>
+              <h4>{{article.pub_date | date: 'MM/dd/yyyy'}}</h4>
+          </ion-item>
+        </ion-list>
 </ion-content>
