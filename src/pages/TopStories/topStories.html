@@ -31,12 +31,12 @@
   <ion-list *ngSwitchCase="'sports'">
             <ion-list>
                 <ion-item *ngFor="let story of stories">
-                    <ion-thumbnail item-left *ngIf="story.multimedia.url">
-                    <img src="{{story.multimedia[0].url}}">
+                    <ion-thumbnail item-left>
+                    <img src="{{story.multimedia[1].url}}">
                     </ion-thumbnail>
                     <h2>{{story.title}}</h2>
                     <p>{{story.abstract}}</p>
-                    <button ion-button clear item-right>View</button>
+                    <button ion-button clear item-right><a href="{{story.short_url}}">View</a></button>
                 </ion-item>
             </ion-list>
   </ion-list>
@@ -49,7 +49,7 @@
                     </ion-thumbnail>
                     <h2>{{story.title}}</h2>
                     <p>{{story.abstract}}</p>
-                    <button ion-button clear item-right>View</button>
+                    <button ion-button clear item-right><a href="{{story.short_url}}">View</a></button>
                 </ion-item>
             </ion-list>
   </ion-list>
@@ -62,7 +62,7 @@
                     </ion-thumbnail>
                     <h2>{{story.title}}</h2>
                     <p>{{story.abstract}}</p>
-                    <button ion-button clear item-right>View</button>
+                    <button ion-button clear item-right><a href="{{story.short_url}}">View</a></button>
                 </ion-item>
             </ion-list>
   </ion-list>
@@ -75,7 +75,7 @@
                     </ion-thumbnail>
                     <h2>{{story.title}}</h2>
                     <p>{{story.abstract}}</p>
-                    <button ion-button clear item-right>View</button>
+                    <button ion-button clear item-right><a href="{{story.short_url}}">View</a></button>
                 </ion-item>
             </ion-list>
   </ion-list>
@@ -88,7 +88,7 @@
                     </ion-thumbnail>
                     <h4>{{story.title}}</h4>
                     <p>{{story.abstract}}</p>
-                    <button ion-button clear item-right>View</button>
+                    <button ion-button clear item-right><a href="{{story.short_url}}">View</a></button>
                 </ion-item>
             </ion-list>
   </ion-list>

@@ -10,19 +10,9 @@ import {FilterArticlesPage} from './filterArticle.component';
 })
 export class TopStoriesPage{
   stories: any[]
+  url: String;
   constructor(public navCtrl: NavController, private _articleService: articleServices, public param: NavParams) {    
   }
-  ngOnInit(){
-  }
-  // getArticles(){
-  //           this._articleService.getArticles()
-  //           .subscribe(res => 
-  //           {
-  //             this.items=res.response.docs;
-  //             console.log(this.items);
-              
-  //         })
-  // }
         onClick(keyword){
             console.log(keyword);
           this._articleService.getTopStories(keyword)

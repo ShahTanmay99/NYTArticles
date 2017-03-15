@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { ArticlesPage } from '../Articles/article.component';
 import { TopStoriesPage } from '../TopStories/topStories.component';
 import { NavController } from 'ionic-angular';
+import {ArchivesPage} from '../Archives/archive.component';
 
 @Component({
   selector: 'page-home',
@@ -17,5 +18,8 @@ articleSearch(){
   }
 TopStories(){
   this.navCtrl.push(TopStoriesPage)
+}
+Archives(){
+  this.navCtrl.push(ArchivesPage)
 }
 }

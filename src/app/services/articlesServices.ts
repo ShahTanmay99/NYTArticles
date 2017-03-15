@@ -20,4 +20,8 @@ export class articleServices{
         return this._http.get("https://api.nytimes.com/svc/topstories/v2/" + keyword + ".json?&api-key=59888d9d9a9a4b34a2304aaa72aa15b5")
         .map(res=> res.json())
     }
+    getArchives(year,month){
+        return this._http.get("https://api.nytimes.com/svc/archive/v1/" + year + "/" +month+ ".json?&api-key=59888d9d9a9a4b34a2304aaa72aa15b5")
+        .map(res=> res.json())
+    }
 }

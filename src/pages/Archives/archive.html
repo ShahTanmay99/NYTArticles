@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+      Archive Home Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="form" (ngSubmit)="submit(form.value)">
+      <ion-item>
+        <ion-label>Year</ion-label>
+        <ion-input type="text" formControlName="year" ></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Month</ion-label>
+        <ion-input type="text" formControlName="month"></ion-input>
+      </ion-item>
+      <button ion-button type="submit">Submit</button>
+    </form>
+</ion-content>
