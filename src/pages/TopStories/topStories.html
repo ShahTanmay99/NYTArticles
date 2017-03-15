@@ -1,0 +1,96 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+        Top Stories
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+    <div padding>
+  <ion-segment [(ngModel)]="pet">
+    <ion-segment-button value="sports" #a (click)="onClick(a.value)">
+      Sports
+    </ion-segment-button>
+    <ion-segment-button value="national" #b (click)="onClick(b.value)">
+      National
+    </ion-segment-button>
+    <ion-segment-button value="technology" #c (click)="onClick(c.value)">
+      Technology
+    </ion-segment-button>
+    <ion-segment-button value="business" #d (click)="onClick(d.value)">
+      Business
+    </ion-segment-button>
+    <ion-segment-button value="world" #e (click)="onClick(e.value)">
+      World
+    </ion-segment-button>
+  </ion-segment>
+</div>
+
+<div [ngSwitch]="pet">
+  <ion-list *ngSwitchCase="'sports'">
+            <ion-list>
+                <ion-item *ngFor="let story of stories">
+                    <ion-thumbnail item-left *ngIf="story.multimedia.url">
+                    <img src="{{story.multimedia[0].url}}">
+                    </ion-thumbnail>
+                    <h2>{{story.title}}</h2>
+                    <p>{{story.abstract}}</p>
+                    <button ion-button clear item-right>View</button>
+                </ion-item>
+            </ion-list>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'national'">
+            <ion-list>
+                <ion-item *ngFor="let story of stories">
+                    <ion-thumbnail item-left>
+                    <img src="{{story.multimedia.url}}">
+                    </ion-thumbnail>
+                    <h2>{{story.title}}</h2>
+                    <p>{{story.abstract}}</p>
+                    <button ion-button clear item-right>View</button>
+                </ion-item>
+            </ion-list>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'technology'">
+            <ion-list>
+                <ion-item *ngFor="let story of stories">
+                    <ion-thumbnail item-left>
+                    <img src="{{story.multimedia.url}}">
+                    </ion-thumbnail>
+                    <h2>{{story.title}}</h2>
+                    <p>{{story.abstract}}</p>
+                    <button ion-button clear item-right>View</button>
+                </ion-item>
+            </ion-list>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'business'">
+            <ion-list>
+                <ion-item *ngFor="let story of stories">
+                    <ion-thumbnail item-left>
+                    <img src="{{story.multimedia.url}}">
+                    </ion-thumbnail>
+                    <h2>{{story.title}}</h2>
+                    <p>{{story.abstract}}</p>
+                    <button ion-button clear item-right>View</button>
+                </ion-item>
+            </ion-list>
+  </ion-list>
+
+  <ion-list *ngSwitchCase="'world'">
+            <ion-list>
+                <ion-item *ngFor="let story of stories">
+                    <ion-thumbnail item-left>
+                    <img src="{{story.multimedia.url}}">
+                    </ion-thumbnail>
+                    <h4>{{story.title}}</h4>
+                    <p>{{story.abstract}}</p>
+                    <button ion-button clear item-right>View</button>
+                </ion-item>
+            </ion-list>
+  </ion-list>
+</div>
+</ion-content>

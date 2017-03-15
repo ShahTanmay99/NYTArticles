@@ -1,16 +1,25 @@
 <ion-header>
   <ion-navbar color="primary">
     <ion-title>
-      Articles
+      Articles Search Home Page
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-        <ion-list>
-          <ion-item *ngFor="let article of items">
-              <h3>{{article.snippet}}</h3>
-              <h4>{{article.pub_date | date: 'MM/dd/yyyy'}}</h4>
-          </ion-item>
-        </ion-list>
+<ion-searchbar placeholder="Search Articles" #keyword (keyup)="searchArticle(keyword.value)"></ion-searchbar>
+<button ion-button clear item-right (click)="filterSearch()">Filter Search</button>
+<ion-list>
+<ion-card *ngFor="let article of articles">
+  <ion-card-content>
+    <ion-card-title>
+      {{article.headline.main}}
+      </ion-card-title>
+    <p>
+      {{article.snippet}}
+    </p>
+  </ion-card-content>
+</ion-card>
+</ion-list>
+
 </ion-content>

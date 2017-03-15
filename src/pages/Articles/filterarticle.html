@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>
+     Filter Articles Page
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding>
+    <form [formGroup]="filter" (ngSubmit)="logForm(filter.value)">
+      <ion-item>
+        <ion-label>Topic</ion-label>
+        <ion-input type="text" formControlName="topic"></ion-input>
+      </ion-item>
+      <ion-item>
+        <ion-label>Date From</ion-label>
+        <ion-textarea formControlName="datefrom"></ion-textarea>
+      </ion-item>
+      <button ion-button type="submit">Submit</button>
+    </form>
+  `
+</ion-content>

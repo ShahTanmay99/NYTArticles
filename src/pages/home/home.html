@@ -1,17 +1,47 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
+  <ion-navbar color="primary">
+    <ion-title>New York Times</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <h2>Welcome to New York Times App!</h2>
+          <ion-card>
+  <ion-card-header>
+    Explore Nearby
+  </ion-card-header>
+
+  <ion-list>
+    <button ion-item (click)="articleSearch()">
+      <ion-icon name="search" item-left></ion-icon>
+      Article Search
+    </button>
+
+    <button ion-item (click)="TopStories()">
+      <ion-icon name="medical" item-left></ion-icon>
+      Top Stories
+    </button>
+
+    <button ion-item>
+      <ion-icon name="cafe" item-left></ion-icon>
+      Cafe
+    </button>
+
+    <button ion-item>
+      <ion-icon name="paw" item-left></ion-icon>
+      Dog Park
+    </button>
+
+    <button ion-item>
+      <ion-icon name="beer" item-left></ion-icon>
+      Pub
+    </button>
+
+    <button ion-item>
+      <ion-icon name="planet" item-left></ion-icon>
+      Space
+    </button>
+
+  </ion-list>
+</ion-card>
 </ion-content>
